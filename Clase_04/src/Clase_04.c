@@ -7,11 +7,18 @@
  Description : Hello World in C, Ansi-style
  ============================================================================
  */
-
 #include <stdio.h>
 #include <stdlib.h>
+#include "utn.h"
 
-int main(void) {
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
+
+
+int main(void)
+{
+	char continuar;
+	int r; // Respuesta
+	r = getChar (&continuar,"Ingrese Opcion [A][B][C]","Error",'A','C',2);
+	if(r == 0)
+	printf("Continuar: %c",continuar);
 	return EXIT_SUCCESS;
 }
