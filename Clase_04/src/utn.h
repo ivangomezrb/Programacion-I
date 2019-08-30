@@ -28,3 +28,5 @@ int getString(	char *resultado,
 				int minimo,
 				int reintentos);
 
+int calcularMaximoYMinimo (int *numero, int *maximo, int *minimo);
+

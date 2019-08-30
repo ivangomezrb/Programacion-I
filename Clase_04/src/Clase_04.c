@@ -5,10 +5,27 @@
 
 int main(void)
 {
-	char nombre[51];
-	int r; // Respuesta
-	r = getString(nombre,"Nombre: ","Error. El largo debe ser entre 2 y 50. \n", 50, 2,2);
-	if(r == 0)
-	printf("Nombre: %s",nombre);
+	 // Maximo minimo promedio cuantos numeros - hasta que quiera el usuario.
+	int numero;
+	int maximo;
+	int minimo;
+	int promedio;
+	int flag = 0;
+	int acumulador = 0;
+	int contador = 0;
+	char respuesta = 's';
+	while (respuesta == 's'){
+		getInt(&numero,"Ingrese un numero.","Error, ingrese un numero entre -500 y 500.",-500,500,3);
+		if (flag == 0){
+			maximo = numero;
+			minimo = numero;
+			flag = 1;
+		}
+		calcularMaximoYMinimo(&numero,&maximo,&minimo);
+
+	}
+
+
+
 	return EXIT_SUCCESS;
 }

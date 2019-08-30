@@ -145,3 +145,30 @@ int getString(	char *resultado,
 		}
 		return retorno;
 }
+
+int calcularMaximoYMinimo (int *numero, int *maximo, int *minimo){
+	int retorno = EXIT_ERROR;
+	int bufferMaximo;
+	int bufferMinimo;
+	if(*numero > *maximo){
+		bufferMaximo = *numero;
+	}else if (*numero < *minimo){
+		bufferMinimo = *numero;
+	}
+	*maximo = bufferMaximo;
+	*minimo = bufferMinimo;
+
+	return retorno;
+}
+
+int calcularPromedio (int *numero, int *acumulador, int *contador, int *promedio){
+	int retorno = EXIT_ERROR;
+
+	int bufferNumero = (int)(numero);
+	int bufferAcumulador = (int)acumulador;
+	bufferAcumulador = bufferNumero + bufferAcumulador;
+
+
+	return retorno;
+}
+
