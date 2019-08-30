@@ -2,6 +2,7 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
 #include "utn.h"
+#include <string.h>
 
 int getInt(	int *resultado,
 			char *mensaje,
@@ -108,4 +109,39 @@ int getChar(	char *resultado,
 		}while(reintentos >= 0);
 	}
 	return retorno;
+}
+
+int getString(	char *resultado,
+				char *mensaje,
+				char *mensajeError,
+				int maximo,
+				int minimo,
+				int reintentos){
+	int retorno = EXIT_ERROR;
+	char buffer[100];
+	if(	resultado != NULL &&
+		mensaje	!= NULL &&
+		mensajeError != NULL &&
+		minimo < maximo &&
+		reintentos >= 0)
+	{
+		do
+		{
+			printf("%s",mensaje);
+			__fpurge(stdin); // fflush
+			if(scanf("%s",buffer)==1)
+			{
+				int longitudCadena = strlen(buffer);
+				if(longitudCadena >= minimo && longitudCadena <= maximo)
+				{
+					strcpy(resultado,buffer);
+					retorno = EXIT_SUCCESS;
+					break;
+				}
+				}
+			printf("%s",mensajeError);
+			reintentos--;
+		}while(reintentos >= 0);
+		}
+		return retorno;
 }
