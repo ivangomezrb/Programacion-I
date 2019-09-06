@@ -243,7 +243,7 @@ int getString(	char *pResultado,
 	if 			(pResultado != NULL &&
 				 pMensaje != NULL &&
 				 pMensajeError != NULL &&
-
+				 minimo<=maximo &&
 				 reintentos >= 0)
 {
 	do
