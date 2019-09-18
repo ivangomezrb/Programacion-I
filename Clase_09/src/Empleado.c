@@ -97,28 +97,30 @@ int compararEmpleadoPorId(struct sEmpleado *aArray, int cantidad,struct sEmplead
 
 int altaEmpleadoPorId(struct sEmpleado *aArray, int cantidad,struct sEmpleado empleado)
 {
+	// Falta comparar si el id ingresado ya existe.
 	int retorno = -1;
 	int posicion;
 	if(aArray!=NULL && cantidad>0){
 	posicion = buscarLugarLibreEmpleado(aArray,cantidad);
-	if(compararEmpleadoPorId(aArray,cantidad,empleado)==-1){
+	// if(compararEmpleadoPorId(aArray,cantidad,empleado)==-1){
 		if(posicion>=0){
 			retorno = 0;
 			aArray[posicion] = empleado;
 			aArray[posicion].status = STATUS_NOT_EMPTY;
-		}
+		//}
 	}
 	}
 	return retorno;
 }
 int bajaEmpleadoPorId(struct sEmpleado *aArray, int cantidad,int id)
 {
+	//Falta cambiar el estado del ID y preguntar "Esta seguro?"
 	int retorno = -1;
 	int i;
 	if(aArray!=NULL && cantidad>0){
 		for(i=0;i<cantidad;i++){
 			if(buscarLugarLibreEmpleado(aArray,cantidad)<0){
-				aArray[i].status = STATUS_EMPTY;
+				// aArray[i].status = STATUS_EMPTY;
 			}
 		}
 	}
