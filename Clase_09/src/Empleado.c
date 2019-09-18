@@ -80,7 +80,7 @@ int buscarLugarLibreEmpleado(struct sEmpleado *aArray, int cantidad)
 	return retorno;
 }
 int compararEmpleadoPorId(struct sEmpleado *aArray, int cantidad,struct sEmpleado empleado)
-{
+{ // Cambiar nombre a existeIdDisponible o algo parecido
 	int retorno = -1;
 	int i;
 	int idPosicion;
