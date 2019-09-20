@@ -114,13 +114,14 @@ int altaEmpleadoPorId(struct sEmpleado *aArray, int cantidad,struct sEmpleado em
 }
 int bajaEmpleadoPorId(struct sEmpleado *aArray, int cantidad,int id)
 {
-	//Falta cambiar el estado del ID y preguntar "Esta seguro?"
+	//Falta preguntar "Esta seguro?"
 	int retorno = -1;
 	int i;
 	if(aArray!=NULL && cantidad>0){
 		for(i=0;i<cantidad;i++){
 			if(buscarLugarLibreEmpleado(aArray,cantidad)<0){
-				// aArray[i].status = STATUS_EMPTY;
+				retorno = 0;
+				aArray[i].status = STATUS_EMPTY;
 			}
 		}
 	}
